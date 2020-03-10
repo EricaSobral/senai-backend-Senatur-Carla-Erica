@@ -1,0 +1,26 @@
+--DDL
+CREATE DATABASE  Senatur_Manha;
+
+USE  Senatur_Manha;
+
+CREATE TABLE Pacotes (
+id_Pacote INT PRIMARY KEY IDENTITY,
+NomePacote VARCHAR (255) NOT NULL,
+Descricao VARCHAR (255),
+DataIda DATETIME2 NOT NULL,
+DataVolta DATETIME2 NOT NULL,
+Valor DECIMAL NOT NULL,
+NomeCidade VARCHAR (255) NOT NULL
+);
+
+CREATE TABLE TipoUsuario(
+id_TipoUsuario INT PRIMARY KEY IDENTITY,
+Titulo VARCHAR (255) NOT NULL
+);
+
+CREATE TABLE  Usuario (
+id_Usuario INT PRIMARY KEY IDENTITY, 
+Email VARCHAR (255) NOT NULL UNIQUE,
+Senha VARCHAR (255) NOT NULL,
+fk_TipoUsuario INT FOREIGN KEY REFERENCES TipoUsuario(id_TipoUsuario)
+);
