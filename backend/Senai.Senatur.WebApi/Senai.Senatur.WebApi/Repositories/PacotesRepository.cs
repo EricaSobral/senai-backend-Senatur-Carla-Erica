@@ -59,7 +59,7 @@ namespace Senai.Senatur.WebApi.Repositories
 
         public List<Pacotes> Listar()
         {
-            throw new NotImplementedException();
+           return ctx.Pacotes.ToList();
         }
     }
 }

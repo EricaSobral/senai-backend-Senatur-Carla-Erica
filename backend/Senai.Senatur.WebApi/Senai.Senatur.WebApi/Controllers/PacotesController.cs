@@ -69,7 +69,7 @@ namespace Senai.Senatur.WebApi.Controllers
         [HttpGet("Pacotes/{id}")]
         public IActionResult Get (int id)
         {
-            return Ok(_pacotesRepository.Listar(id));
+            return Ok(_pacotesRepository.BuscarPacotePorId(id));
         }
 
     }
